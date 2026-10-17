@@ -3,10 +3,19 @@
 A high-fidelity, responsive prototype of an improved https://tanotsolutions.com/home2/.
 It keeps the same brand, content and section order, with a consistent spacing and component system.
 
-## Open it
+## Live
+
+- Mockup: https://tanot-solutions.vercel.app/
+- Review pack: https://tanot-solutions.vercel.app/review/
+
+Every push to `main` deploys automatically on Vercel.
+
+## Run locally
+
+From the repository root:
 
 ```bash
-python -m http.server 5173 --directory mockup
+python -m http.server 5173
 ```
 
 Then visit:
