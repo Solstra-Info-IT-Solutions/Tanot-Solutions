@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tanot Homepage Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    :root { --grid-gap: var(--gap); --shadow-md: var(--shadow-sm); --radius-md: var(--r-md); --blue-25: #f7fafd; --fs-h4: 1.125rem; --fs-small: .875rem; }
+    .section--tint { background: var(--surface-alt); }
+    body { background: var(--white); }
+    .doc-nav { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
+    .doc-nav .container { display: flex; align-items: center; gap: var(--s-5); height: 60px; overflow-x: auto; scrollbar-width: none; }
+    .doc-nav a { white-space: nowrap; font-size: 14px; font-weight: 500; color: var(--ink-700); }
+    .doc-nav a:hover { color: var(--blue-700); }
+    .doc-nav .brand img { width: 120px; }
+    .doc-hero { background: var(--blue-50); padding-block: var(--s-10); }
+    .doc-hero h1 { max-width: 20ch; }
+    .doc-hero p { margin-top: var(--s-4); max-width: 64ch; font-size: var(--fs-lead); }
+    .doc-hero .btn-row { margin-top: var(--s-7); }
+    .kpis { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: var(--grid-gap); margin-top: var(--s-8); }
+    .kpi { padding: var(--s-5); }
+    .kpi b { display: block; font-size: 1.75rem; color: var(--ink-900); letter-spacing: -.02em; line-height: 1.2; }
+    .kpi span { font-size: var(--fs-small); color: var(--ink-500); }
+    .doc h2 { margin-bottom: var(--s-3); }
+    .doc .lede { color: var(--ink-500); font-size: var(--fs-lead); max-width: 70ch; margin-bottom: var(--s-7); }
+    .issue-table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; }
+    .issue-table th, .issue-table td { text-align: left; vertical-align: top; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+    .issue-table th { background: var(--blue-25); font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-500); font-weight: 600; }
+    .issue-table tr:last-child td { border-bottom: 0; }
+    .issue-table td:first-child { font-weight: 600; color: var(--ink-900); width: 22%; }
+    .sev { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+    .sev--high { background: #fde8e8; color: #a12828; }
+    .sev--med { background: #fff3dc; color: #8a5a00; }
+    .sev--low { background: var(--blue-50); color: var(--blue-700); }
+    .table-wrap { overflow-x: auto; border-radius: var(--radius-md); }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--s-3); }
+    .swatch { border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; background: var(--white); }
+    .swatch i { display: block; height: 64px; }
+    .swatch div { padding: 10px 12px; font-size: 13px; line-height: 1.4; }
+    .swatch b { display: block; color: var(--ink-900); font-weight: 600; }
+    .ds-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--grid-gap); }
+    .ds-block h3 { margin-bottom: var(--s-4); }
+    .type-row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-4); padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .type-row:last-child { border-bottom: 0; }
+    .type-row code, .space-row code { font-size: 12px; color: var(--ink-500); white-space: nowrap; }
+    .space-row { display: flex; align-items: center; gap: var(--s-4); padding: 6px 0; }
+    .space-row i { display: block; height: 14px; background: var(--blue-600); border-radius: 3px; }
+    .space-row span { width: 48px; font-size: 13px; font-weight: 600; color: var(--ink-900); }
+    .rules { display: grid; gap: 10px; font-size: 15px; }
+    .rules li { display: flex; gap: 10px; }
+    .rules svg { width: 20px; height: 20px; flex: none; color: var(--blue-600); margin-top: 2px; }
+    .compare { display: grid; gap: var(--s-8); }
+    .compare-item h3 { margin-bottom: var(--s-2); }
+    .compare-item > p { color: var(--ink-500); margin-bottom: var(--s-4); max-width: 80ch; }
+    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); }
+    .pair--mobile { grid-template-columns: repeat(2, minmax(0, 300px)); }
+    .shot { margin: 0; border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; background: var(--white); }
+    .shot figcaption { display: flex; align-items: center; gap: 8px; padding: 10px 14px; font-size: 13px; font-weight: 600; border-bottom: 1px solid var(--line); }
+    .shot figcaption .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .shot--before .dot { background: #d64545; }
+    .shot--after .dot { background: var(--success); }
+    .shot img { width: 100%; }
+    .changes { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--grid-gap); }
+    .changes .card h3 { font-size: var(--fs-h4); }
+    .changes .card ul { margin-top: var(--s-3); display: grid; gap: 8px; font-size: 15px; padding-left: 18px; list-style: disc; }
+    .devices { display: flex; gap: var(--s-5); overflow-x: auto; padding-bottom: var(--s-3); align-items: flex-start; }
+    .device { flex: none; }
+    .device p { font-size: 13px; font-weight: 600; color: var(--ink-500); margin-bottom: 8px; }
+    .device-frame { border: 1px solid var(--line-strong); border-radius: 12px; overflow: hidden; background: var(--white); box-shadow: var(--shadow-md); }
+    .device-frame iframe { border: 0; max-width: none; transform-origin: 0 0; }
+    .qa-list { counter-reset: q; display: grid; gap: var(--s-3); }
+    .qa-list li { counter-increment: q; display: grid; grid-template-columns: 32px 1fr; gap: var(--s-3); padding: var(--s-4) var(--s-5); background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md); font-size: 15px; }
+    .qa-list li::before { content: counter(q); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--blue-50); color: var(--blue-700); font-weight: 700; font-size: 13px; }
+    .qa-list b { color: var(--ink-900); }
+    @media (max-width: 820px) {
+      .kpis { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .ds-grid, .changes { grid-template-columns: minmax(0,1fr); }
+      .pair { grid-template-columns: minmax(0,1fr); }
+      .pair--mobile { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+  </style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5" opacity=".25" fill="currentColor" stroke="none"/><path d="m8 12.5 2.6 2.6L16.5 9"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</defs></svg>
+
+<nav class="doc-nav" aria-label="Review sections">
+  <div class="container">
+    <a class="brand" href="../index.html"><img src="https://tanotsolutions.com/wp-content/uploads/2025/03/TS-blue-logo-1536x370.png" alt="Tanot Solutions"></a>
+    <a href="#feedback">Video feedback</a>
+    <a href="#audit">Audit</a>
+    <a href="#system">Design system</a>
+    <a href="#changes">What changed</a>
+    <a href="#compare">Before / after</a>
+    <a href="#responsive">Responsive</a>
+    <a href="#open">Open questions</a>
+    <a class="btn btn--primary btn--sm" href="../index.html" style="margin-left:auto">Open mockup <svg><use href="#i-arrow"/></svg></a>
+  </div>
+</nav>
+
+<header class="doc-hero">
+  <div class="container">
+    <span class="eyebrow">Homepage redesign · review pack · revision 4</span>
+    <h1 style="margin-top:12px">Tanot Solutions homepage: spacing &amp; consistency pass</h1>
+    <p>This is an improvement of <a href="https://tanotsolutions.com/home2/">tanotsolutions.com/home2</a>, not a rebrand. Every section, claim, testimonial, award and link from the live page is kept in its original order. The work fixes the vertical rhythm, typography, components and responsive behaviour.</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="../index.html">View the mockup <svg><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--secondary" href="#compare">Jump to before / after</a>
+    </div>
+    <div class="kpis">
+      <div class="card kpi"><b>11 / 11</b><span>Points from Renu's feedback video addressed or flagged with a clear next step</span></div>
+      <div class="card kpi"><b>5 / 5</b><span>Side-by-side blocks (services, case study, founder, FAQ, reviews) with columns of exactly the same height</span></div>
+      <div class="card kpi"><b>7 → 1</b><span>Section paddings → one rhythm (80 / 72 / 60 / 48px by breakpoint)</span></div>
+      <div class="card kpi"><b>−26%</b><span>Mobile page length at 390px (live 21,228px → 15,694px)</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="doc">
+
+<!-- ============ Video feedback ============ -->
+<section class="section" id="feedback">
+  <div class="container">
+    <span class="eyebrow">0 · Feedback video (4:21)</span>
+    <h2 style="margin-top:12px">What Renu asked for, and what changed</h2>
+    <p class="lede">Taken from the full caption track and frames of "Homepage Redesign Feedback and Spacing Issues". Timestamps point to the moment in the video.</p>
+    <div class="table-wrap">
+    <table class="issue-table">
+      <thead><tr><th>Feedback</th><th>What the mockup does now</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>0:22–0:57 · Hero: spacing issues, button placement, "the logo" and the section feel inexperienced</td><td>One rhythm (badge → 20px → headline → 20px → text → 32px → buttons → 32px → proof points). The floating Clutch image is replaced by a single "5.0 rated on Clutch" pill linked to the real Clutch profile. The form sits in one card; the stats strip uses one style.</td><td><span class="sev sev--low">Done</span></td></tr>
+        <tr><td>1:00 · "Trusted by 150+ brands" heading is too big</td><td>Now a quiet 16px label above a logo wall of equal cells.</td><td><span class="sev sev--low">Done</span></td></tr>
+        <tr><td>1:07 · Add a transcript of Lisa's video next to it</td><td>Lisa's 42-second video was transcribed locally (speech-to-text) and lightly cleaned: "Tanout" corrected to "Tanot", one stumble smoothed. The transcript card sits beside the video at the same height; the three written reviews form an equal row below. Raw transcript: <a href="lisa-warren-transcript-raw.txt">lisa-warren-transcript-raw.txt</a>.</td><td><span class="sev sev--low">Done · confirm wording</span></td></tr>
+        <tr><td>1:11–1:40 · Reviews too vast; boxes are different sizes</td><td>Video + transcript form one equal-height row, then three equal review cards. Every author row sits on the same divider line.</td><td><span class="sev sev--low">Done</span></td></tr>
+        <tr><td>1:41–2:03 · Services: one column too big, the other ends early</td><td>Tab list and panel are two cards of exactly the same height (measured). The panel is sized to the longest service, so switching tabs never shifts the page.</td><td><span class="sev sev--low">Done</span></td></tr>
+        <tr><td>2:05–2:20 · Case study screenshot not clear</td><td>The screenshot gets more room on a tinted panel, plus a "View full size" link. The source image is only 512px wide, so it can't get sharper.</td><td><span class="sev sev--med">Needs 1600px+ image</span></td></tr>
+        <tr><td>2:22–2:47 · Why us: think about how this section should look</td><td>Centred header, then a 3 × 2 grid of compact cards (icon beside text), all the same height, one CTA below.</td><td><span class="sev sev--low">Done</span></td></tr>
+        <tr><td>2:48–2:56 · Awards could be presented better</td><td>Each award is a card with a fixed image stage (certificates, photos and trophies are contain-fitted so none are cropped or oversized) and a title row.</td><td><span class="sev sev--low">Done</span></td></tr>
+        <tr><td>2:59–3:12 · Founder photo too big for the section</td><td>One founder card: the photo is a framed 280px portrait on a tinted panel instead of a full-height image. Name, stats and CTAs close the text column.</td><td><span class="sev sev--low">Done</span></td></tr>
+        <tr><td>3:14–3:26 · Team section takes too much space</td><td>Compact horizontal cards (56px avatar + name + role), about 100px tall instead of ~190px. Real photos drop into the same avatar circle.</td><td><span class="sev sev--low">Done</span></td></tr>
+        <tr><td>3:29–3:37 · "As featured on" should be its own section</td><td>Its own white band with hairline borders, label on the left and logos on the right, separate from the team and FAQ backgrounds.</td><td><span class="sev sev--low">Done</span></td></tr>
+        <tr><td>3:43–3:48 · CTA background could be green, from the site theme</td><td>The final CTA band now uses the brand green (from the logo and the old "See Client Results" button).</td><td><span class="sev sev--low">Done</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Audit ============ -->
+<section class="section" id="audit">
+  <div class="container">
+    <span class="eyebrow">1 · Design audit</span>
+    <h2 style="margin-top:12px">What's wrong with the current page</h2>
+    <p class="lede">I measured these in the browser at 1440, 1024 and 390px. The biggest problem is that spacing isn't systematic: every section sets its own padding, and the gaps between sections add up unevenly.</p>
+    <div class="table-wrap">
+    <table class="issue-table">
+      <thead><tr><th>Issue</th><th>Evidence (live site)</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr><td>No spacing system</td><td>Section top/bottom padding values of 0, 20, 30, 42, 50, 70 and <b>140px</b>, plus a stray 70px top margin above the case study. "Why choose us" opens with 140px of empty space.</td><td><span class="sev sev--high">High</span></td></tr>
+        <tr><td>Uneven section boundaries</td><td>Almost every section shares the same #EAF0FA background, so the eye can't find where one ends. Some sections have 0px bottom padding and the next has 50px top, which makes the gaps lopsided.</td><td><span class="sev sev--high">High</span></td></tr>
+        <tr><td>Fragmented sections</td><td>"…and many more." sits in its own 59px-tall container (twice). The reviews block is split into 3 containers (269 + 568 + 703px), and the case study into 2.</td><td><span class="sev sev--med">Medium</span></td></tr>
+        <tr><td>Oversized mobile layout</td><td>The page is <b>21,228px</b> long at 390px. The testimonial row alone is 3,757px and "Why choose us" is 2,210px. Hero buttons have different widths, and the arrow wraps onto its own line.</td><td><span class="sev sev--high">High</span></td></tr>
+        <tr><td>Typography drift</td><td>6 typefaces (Inter, Poppins, Roboto, DM Sans, Roboto Slab, system UI). About 10 headings are marked up as <code>&lt;h1&gt;</code>, including testimonial quotes and names. Body text varies between 16 and 19px at weights 100–400.</td><td><span class="sev sev--high">High</span></td></tr>
+        <tr><td>Inconsistent components</td><td>Buttons are 48, 58 and 76px tall with radii of 7, 8 and 10px. The header CTA is black while every other primary CTA is blue. The stats band is grey (#404040) but the footer is navy (#0A1628).</td><td><span class="sev sev--med">Medium</span></td></tr>
+        <tr><td>Heavy FAQ styling</td><td>Every question is a solid blue bar, so the blue fights the actual CTAs. Answers start with a leading space.</td><td><span class="sev sev--low">Low</span></td></tr>
+        <tr><td>Uneven card content</td><td>Blog thumbnails come in 3 aspect ratios (1:1, 1.56:1 and 1.5:1), so the cards have ragged heights. Award images are mixed photos, certificates and trophies at different sizes.</td><td><span class="sev sev--med">Medium</span></td></tr>
+        <tr><td>Content defects</td><td>The Sandeep Das testimonial appears <b>twice</b>. Team photos are missing (empty placeholder boxes). The founder's name is printed twice ("Renu Sharma / Renu Sharma Founder…"). "Best Roi Focused SEO Agency 2026" is used for two different awards. The HubSpot logo tile looked blank during the audit.</td><td><span class="sev sev--med">Medium</span></td></tr>
+        <tr><td>Dead links</td><td>Several CTAs point to <code>#</code>, including "View All Client Reviews", "Read full case study", "All Case Studies", "Talk to our team" and the final "Contact Us".</td><td><span class="sev sev--high">High</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Design system ============ -->
+<section class="section section--tint" id="system">
+  <div class="container">
+    <span class="eyebrow">2 · Mini design system</span>
+    <h2 style="margin-top:12px">Tokens and components</h2>
+    <p class="lede">All values live in <code>assets/css/tokens.css</code> as CSS custom properties, so they can go straight into the Elementor global settings. The colours come from the live site; nothing new was introduced.</p>
+
+    <h3 style="margin-bottom:16px">Colour</h3>
+    <div class="swatches">
+      <div class="swatch"><i style="background:#1a8cd0"></i><div><b>Brand blue</b>#1A8CD0 · CTAs, links</div></div>
+      <div class="swatch"><i style="background:#1474ae"></i><div><b>Blue 700</b>#1474AE · hover</div></div>
+      <div class="swatch"><i style="background:#eaf0fa"></i><div><b>Blue 50</b>#EAF0FA · tinted sections</div></div>
+      <div class="swatch"><i style="background:#0a1628"></i><div><b>Navy 900</b>#0A1628 · stats, footer</div></div>
+      <div class="swatch"><i style="background:#0f1923"></i><div><b>Ink 900</b>#0F1923 · headings</div></div>
+      <div class="swatch"><i style="background:#3a4556"></i><div><b>Ink 700</b>#3A4556 · body</div></div>
+      <div class="swatch"><i style="background:#5f6b80"></i><div><b>Ink 500</b>#5F6B80 · meta</div></div>
+      <div class="swatch"><i style="background:#dce3ee"></i><div><b>Line</b>#DCE3EE · borders</div></div>
+      <div class="swatch"><i style="background:#f5a524"></i><div><b>Star</b>#F5A524 · ratings only</div></div>
+    </div>
+
+    <div class="ds-grid" style="margin-top:var(--s-8)">
+      <div class="card ds-block">
+        <h3>Typography: Inter</h3>
+        <div class="type-row"><span style="font-size:44px;font-weight:700;color:var(--ink-900);letter-spacing:-.035em;line-height:1.1">Display</span><code>36→56 / 1.08 / 700</code></div>
+        <div class="type-row"><span style="font-size:34px;font-weight:700;color:var(--ink-900);letter-spacing:-.03em">Heading 2</span><code>28→40 / 1.15 / 700</code></div>
+        <div class="type-row"><span style="font-size:26px;font-weight:700;color:var(--ink-900);letter-spacing:-.025em">Heading 3 / panel</span><code>22→28 / 1.2 / 700</code></div>
+        <div class="type-row"><span style="font-size:18px;font-weight:600;color:var(--ink-900)">Card title</span><code>18 / 1.4 / 600</code></div>
+        <div class="type-row"><span style="font-size:18px">Lead paragraph</span><code>16→18 / 1.7 / 400</code></div>
+        <div class="type-row"><span style="font-size:16px">Body text</span><code>16 / 1.65 / 400 · small 14–15</code></div>
+        <div class="type-row"><span class="eyebrow" style="margin:0">Eyebrow</span><code>13 / 600 / pill</code></div>
+      </div>
+      <div class="card ds-block">
+        <h3>Spacing: 8-pt scale</h3>
+        <div class="space-row"><span>12</span><i style="width:12px"></i><code>button ↔ button, accordion items</code></div>
+        <div class="space-row"><span>16</span><i style="width:16px"></i><code>eyebrow → title → description</code></div>
+        <div class="space-row"><span>24</span><i style="width:24px"></i><code>gap between cards</code></div>
+        <div class="space-row"><span>32</span><i style="width:32px"></i><code>card padding</code></div>
+        <div class="space-row"><span>48</span><i style="width:48px"></i><code>section header → content, panel padding</code></div>
+        <div class="space-row"><span>64</span><i style="width:64px"></i><code>gap between split columns</code></div>
+        <div class="space-row"><span>96</span><i style="width:96px"></i><code>section padding (desktop)</code></div>
+        <p style="margin-top:12px;font-size:14px;color:var(--ink-500)">Section padding steps down by breakpoint: 96 → 80 (≤1024) → 64 (≤820) → 56px (≤560). The container is 1240px wide with 32 / 24 / 20 / 16px gutters.</p>
+      </div>
+      <div class="card ds-block">
+        <h3>Buttons: 48px (40px in header), radius 10px</h3>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="#system">Primary <svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--secondary" href="#system">Secondary</a>
+          <a class="btn btn--primary btn--sm" href="#system">Small / header</a>
+        </div>
+        <div class="btn-row" style="margin-top:16px;padding:16px;border-radius:12px;background:var(--blue-600)">
+          <a class="btn btn--on-dark" href="#system">On blue</a>
+          <a class="btn btn--ghost-dark" href="#system">Ghost on blue</a>
+        </div>
+        <ul class="rules" style="margin-top:20px">
+          <li><svg><use href="#i-check"/></svg>One primary per group; the secondary always sits to its right.</li>
+          <li><svg><use href="#i-check"/></svg>Title Case labels, with an arrow only on "go somewhere" CTAs.</li>
+          <li><svg><use href="#i-check"/></svg>Full-width under 560px, with tap targets of 52px or more.</li>
+        </ul>
+      </div>
+      <div class="card ds-block">
+        <h3>Cards, forms and images</h3>
+        <ul class="rules">
+          <li><svg><use href="#i-check"/></svg><span><b>Card:</b> white, 1px #E5E9F0 hairline border, 20px radius, 32px padding, near-flat shadow. Large surfaces (form, CTA) use 28px radius.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Split sections:</b> one <code>.split</code> grid with <code>align-items: stretch</code>, so both halves are always the same height.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Inputs:</b> 46px tall, 10px radius, label above, 4px soft blue focus ring, inline error text.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Icons:</b> 22px line icons inside a 44px tinted tile; 20px checklist ticks.</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Images:</b> blog 16:10, founder 4:5, awards 96px square, all with <code>object-fit</code> (contain for certificates and logos, cover for photos).</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Logo walls:</b> a hairline grid of equal 96px cells, logos at 32px max height, greyscale until hover.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Changes ============ -->
+<section class="section" id="changes">
+  <div class="container">
+    <span class="eyebrow">3 · Summary of improvements</span>
+    <h2 style="margin-top:12px">What changed, section by section</h2>
+    <p class="lede">Revision 3 is a ground-up visual redesign with one restrained system: a white base, very light tinted bands, brand blue as the only accent, and one card style. The section order, copy and claims are unchanged.</p>
+    <div class="changes">
+      <div class="card"><h3>Header &amp; hero</h3><ul>
+        <li>A slim 72px glass header with centred navigation and a single blue CTA.</li>
+        <li>A soft gradient hero with a faint grid, a rating pill, a 56px headline and a floating form card.</li>
+        <li>The four stats now sit in one clean white strip at the bottom of the hero instead of a heavy grey band.</li>
+      </ul></div>
+      <div class="card"><h3>Logos &amp; reviews</h3><ul>
+        <li>Client and "featured on" logos sit in hairline logo walls of equal cells, so every logo gets the same space.</li>
+        <li>The video and featured quote form one equal-height row, with two equal cards below. All author rows line up along a divider.</li>
+      </ul></div>
+      <div class="card"><h3>Services</h3><ul>
+        <li>A quiet vertical tab list inside a card, beside one panel card of exactly the same height. The panel is sized to the longest service, so switching tabs never shifts the page.</li>
+        <li>Each panel: icon + title, description, 2-column checklist, CTAs pinned to the bottom.</li>
+      </ul></div>
+      <div class="card"><h3>Case study &amp; why us</h3><ul>
+        <li>The case study is one card split in two: the dashboard on a tinted panel, and the story, a 3-up metrics row and CTAs on the right.</li>
+        <li>Why us is a centred header with a 3 × 2 grid of equal feature cards and one CTA, with no competing dark panels.</li>
+      </ul></div>
+      <div class="card"><h3>Awards, founder &amp; team</h3><ul>
+        <li>Award cards have a fixed 200px image stage (contain-fit) above the title, so certificates, photos and trophies all align.</li>
+        <li>The founder photo matches the height of the story column, with a 3-figure stats row and the signature + CTAs at the bottom.</li>
+        <li>Team cards use initials avatars until the real photos are supplied.</li>
+      </ul></div>
+      <div class="card"><h3>FAQ, blog, CTA &amp; footer</h3><ul>
+        <li>FAQ: the intro column matches the accordion's height, with the "Still deciding?" card pinned to the bottom.</li>
+        <li>Blog cards use 16:10 images, a category pill, a 3-line title clamp and the meta row pinned to the bottom.</li>
+        <li>A centred blue CTA band with a subtle grid. The footer has a white logo, 5 tidy columns and a slim legal bar.</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Before/After ============ -->
+<section class="section section--tint" id="compare">
+  <div class="container">
+    <span class="eyebrow">4 · Before / after</span>
+    <h2 style="margin-top:12px">Side-by-side at 1440px and 390px</h2>
+    <p class="lede">These were captured from the live page and the mockup at the same viewport, each scrolled to the top of the same section.</p>
+    <div class="compare">
+      <div class="compare-item">
+        <h3>Hero</h3>
+        <p>A soft gradient hero with one Clutch rating pill, a 52px headline, even spacing down to the buttons and proof points, and the form in a single card.</p>
+        <div class="pair">
+          <figure class="shot shot--before"><figcaption><span class="dot"></span>Before · live</figcaption><img src="img/before-hero.jpg" alt="Live site hero at 1440px"></figure>
+          <figure class="shot shot--after"><figcaption><span class="dot"></span>After · mockup</figcaption><img src="img/after-hero.jpg" alt="Mockup hero at 1440px"></figure>
+        </div>
+      </div>
+      <div class="compare-item">
+        <h3>Reviews</h3>
+        <p>A centred header, then Lisa's video beside her transcript in one equal-height row, and three equal written reviews below.</p>
+        <div class="pair">
+          <figure class="shot shot--before"><figcaption><span class="dot"></span>Before · live</figcaption><img src="img/before-reviews.jpg" alt="Live site reviews section"></figure>
+          <figure class="shot shot--after"><figcaption><span class="dot"></span>After · mockup</figcaption><img src="img/after-reviews.jpg" alt="Mockup reviews section"></figure>
+        </div>
+      </div>
+      <div class="compare-item">
+        <h3>Services</h3>
+        <p>The tab list and the panel are two cards of exactly the same height. The panel is sized to the longest service so switching tabs never shifts the page, and the CTAs sit at the bottom.</p>
+        <div class="pair">
+          <figure class="shot shot--before"><figcaption><span class="dot"></span>Before · live</figcaption><img src="img/before-services.jpg" alt="Live site services section"></figure>
+          <figure class="shot shot--after"><figcaption><span class="dot"></span>After · mockup</figcaption><img src="img/after-services.jpg" alt="Mockup services section"></figure>
+        </div>
+      </div>
+      <div class="compare-item">
+        <h3>Why choose us</h3>
+        <p>The 140px dead zone is gone. A centred header sits above a 3 × 2 grid of equal feature cards, each with its own icon, and one CTA below.</p>
+        <div class="pair">
+          <figure class="shot shot--before"><figcaption><span class="dot"></span>Before · live</figcaption><img src="img/before-why.jpg" alt="Live site why-us section"></figure>
+          <figure class="shot shot--after"><figcaption><span class="dot"></span>After · mockup</figcaption><img src="img/after-why.jpg" alt="Mockup why-us section"></figure>
+        </div>
+      </div>
+      <div class="compare-item">
+        <h3>Meet the founder</h3>
+        <p>A clean 4:5 portrait with the three founder stats (11+ years, founded 2020, 150+ clients) on a white card overlapping its edge, centred against the story. The mission line is highlighted, and the signature, booking CTA and LinkedIn close the column.</p>
+        <div class="pair">
+          <figure class="shot shot--before"><figcaption><span class="dot"></span>Before · live</figcaption><img src="img/before-founder.jpg" alt="Live site founder section"></figure>
+          <figure class="shot shot--after"><figcaption><span class="dot"></span>After · mockup</figcaption><img src="img/after-founder.jpg" alt="Mockup founder section"></figure>
+        </div>
+      </div>
+      <div class="compare-item">
+        <h3>FAQ</h3>
+        <p>A deep-navy feature band: numbered questions (01–06) as glass rows, and the open question turns into a bright white card so the answer stands out. The heading sits top-left and a "Still deciding? Talk to Renu" card sits bottom-left, so both columns start and end together.</p>
+        <div class="pair">
+          <figure class="shot shot--before"><figcaption><span class="dot"></span>Before · live</figcaption><img src="img/before-faq.jpg" alt="Live site FAQ"></figure>
+          <figure class="shot shot--after"><figcaption><span class="dot"></span>After · mockup</figcaption><img src="img/after-faq.jpg" alt="Mockup FAQ"></figure>
+        </div>
+      </div>
+      <div class="compare-item">
+        <h3>Book a call &amp; footer</h3>
+        <p>A split CTA in the brand green (as suggested in the video): heading, offer line and buttons on the left, and a white card on the right listing what the free SEO growth plan includes. The footer gets a reversed logo, all six services, a contact column and a slim legal bar.</p>
+        <div class="pair">
+          <figure class="shot shot--before"><figcaption><span class="dot"></span>Before · live</figcaption><img src="img/before-cta.jpg" alt="Live site CTA and footer"></figure>
+          <figure class="shot shot--after"><figcaption><span class="dot"></span>After · mockup</figcaption><img src="img/after-cta.jpg" alt="Mockup CTA"></figure>
+        </div>
+        <div class="pair" style="margin-top:var(--s-4)">
+          <div></div>
+          <figure class="shot shot--after"><figcaption><span class="dot"></span>After · footer</figcaption><img src="img/after-footer.jpg" alt="Mockup footer"></figure>
+        </div>
+      </div>
+      <div class="compare-item">
+        <h3>Mobile hero (390px)</h3>
+        <p>Left-aligned text, 20px gutters and full-width buttons of equal size. The arrow no longer wraps.</p>
+        <div class="pair pair--mobile">
+          <figure class="shot shot--before"><figcaption><span class="dot"></span>Before</figcaption><img src="img/before-mobile-hero.jpg" alt="Live site mobile hero"></figure>
+          <figure class="shot shot--after"><figcaption><span class="dot"></span>After</figcaption><img src="img/after-mobile-hero.jpg" alt="Mockup mobile hero"></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Responsive ============ -->
+<section class="section" id="responsive">
+  <div class="container">
+    <span class="eyebrow">5 · Responsive check</span>
+    <h2 style="margin-top:12px">Live mockup at every target width</h2>
+    <p class="lede">Each frame below is the real mockup rendered at its true width and then scaled down. Scroll inside a frame to check any section. I verified 1440, 1280, 768, 390 and 360px for horizontal overflow (none) and console errors (none).</p>
+    <div class="devices" data-devices>
+      <div class="device" data-w="1440" data-h="900"><p>Desktop · 1440</p><div class="device-frame"><iframe src="../index.html" title="Mockup at 1440px"></iframe></div></div>
+      <div class="device" data-w="1280" data-h="800"><p>Laptop · 1280</p><div class="device-frame"><iframe src="../index.html" title="Mockup at 1280px"></iframe></div></div>
+      <div class="device" data-w="768" data-h="1024"><p>Tablet · 768</p><div class="device-frame"><iframe src="../index.html" title="Mockup at 768px"></iframe></div></div>
+      <div class="device" data-w="390" data-h="844"><p>Mobile · 390</p><div class="device-frame"><iframe src="../index.html" title="Mockup at 390px"></iframe></div></div>
+      <div class="device" data-w="360" data-h="780"><p>Small mobile · 360</p><div class="device-frame"><iframe src="../index.html" title="Mockup at 360px"></iframe></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Open questions ============ -->
+<section class="section section--tint" id="open">
+  <div class="container">
+    <span class="eyebrow">6 · Assumptions &amp; open questions</span>
+    <h2 style="margin-top:12px">Needs client confirmation</h2>
+    <p class="lede">Nothing below was invented. These are gaps found in the live content, plus the small copy edits made for layout and readability.</p>
+    <ol class="qa-list">
+      <li><span><b>Lisa Warren transcript:</b> generated with local speech-to-text and lightly edited (brand spelling, one stumble). Please confirm the wording with Lisa before publishing; the raw, timestamped version is in <code>review/lisa-warren-transcript-raw.txt</code>.</span></li>
+      <li><span><b>Case study screenshot:</b> the current dashboard image is 512px wide, which is why it looks unclear. Please export it again at 1600px or wider.</span></li>
+      <li><span><b>Duplicate testimonial:</b> the live page shows Sandeep Das's quote twice. The mockup keeps it once, in the row of three written reviews under the video and transcript.</span></li>
+      <li><span><b>Team photos:</b> all four team images on the live page are empty placeholders, so the mockup uses initials. Please supply portraits (square, at least 400px).</span></li>
+      <li><span><b>Awards:</b> two different awards are both titled "Best ROI Focused SEO Agency 2026". Please confirm each award's name, issuer and year.</span></li>
+      <li><span><b>Missing URLs:</b> the "Learn More" links for Technical, AI, Local, SaaS SEO and Content Marketing (only Link Building has a page in the nav), the direct case-study URL and Renu's LinkedIn. These are marked with <code>data-todo</code> in the HTML.</span></li>
+      <li><span><b>Client logo names:</b> two logos (first tile and the first tile of row 2) have no alt text on the live site and couldn't be identified with confidence.</span></li>
+      <li><span><b>Copy edits made:</b> sentence-case section headings; "02+" → "2+"; "Roi" → "ROI"; in the case study, "the traffic tanked up" → "traffic climbed" (since "tanked" reads as a drop); "Email" → "Work email" with placeholders; a one-line Clutch proof under the hero CTAs ("5.0 rating on Clutch", taken from the existing badge).</span></li>
+      <li><span><b>Colour shifts:</b> the stats band goes from grey to footer navy, and the header CTA from black to brand blue. Both reuse colours already on the site.</span></li>
+      <li><span><b>Footer logo:</b> the mockup turns the existing logo white with a CSS filter. Please supply an official reversed (white) logo file for production.</span></li>
+      <li><span><b>Content placements:</b> the final CTA reuses existing claims (no upfront payment, transparent process, white-hat links) and the existing "free audit" offer. The founder stats reuse 11+ years, founded 2020 and 150+ clients. The hero pill reuses the Clutch 5.0 rating and 11+ years, and links to clutch.co/profile/tanot-solutions (the URL used on the live site). The hero proof points reuse existing claims. Three short labels are new: "Real results from real campaigns" (case study), the form button "Get My Free Strategy" and "Not sure which service fits your goals?" (services). The footer lists all six homepage services; five link to the services section until their pages exist.</span></li>
+      <li><span><b>Prototype limits:</b> images are hotlinked from tanotsolutions.com, the lead form only validates (it isn't wired to WPForms), and the reviews video is the live Vimeo embed.</span></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" style="padding-top:0">
+  <div class="container"><div class="footer__bottom"><span>Tanot Solutions homepage mockup · review pack</span><a href="../index.html">Open the mockup →</a></div></div>
+</footer>
+
+<script>
+  // Render each iframe at its true viewport width, then scale it down into a fixed-height preview.
+  (function () {
+    var PREVIEW_H = 520;
+    document.querySelectorAll('[data-devices] .device').forEach(function (d) {
+      var w = +d.dataset.w, h = +d.dataset.h;
+      var scale = Math.min(PREVIEW_H / h, 1);
+      if (w > 1000) scale = Math.min(scale, 360 / w);
+      var frame = d.querySelector('.device-frame');
+      var iframe = d.querySelector('iframe');
+      iframe.style.width = w + 'px';
+      iframe.style.height = Math.round(PREVIEW_H / scale) + 'px';
+      iframe.style.transform = 'scale(' + scale + ')';
+      frame.style.width = Math.round(w * scale) + 'px';
+      frame.style.height = PREVIEW_H + 'px';
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tanot Solutions — Homepage Mockup</title>
+  <meta name="description" content="Redesign mockup of the Tanot Solutions homepage.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chev-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-chev-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" fill="currentColor" stroke="none" opacity=".14"/><path d="m8 12.5 2.6 2.6L16.5 9"/></symbol>
+    <symbol id="i-check-plain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 32 32" fill="currentColor"><path d="M13.6 7C8.5 8.8 5 13 5 18.4 5 22.6 7.5 25 10.6 25c2.8 0 4.9-2.1 4.9-4.8 0-2.6-1.9-4.5-4.4-4.5-.5 0-1 .1-1.3.2.6-2.9 3.2-5.5 6.3-6.6zm13 0C21.5 8.8 18 13 18 18.4c0 4.2 2.5 6.6 5.6 6.6 2.8 0 4.9-2.1 4.9-4.8 0-2.6-1.9-4.5-4.4-4.5-.5 0-1 .1-1.3.2.6-2.9 3.2-5.5 6.3-6.6z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M16 14.5h2"/><path d="M6 6V5a2 2 0 0 1 2-2h8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.8 9l5.7 1.8-5.7 1.9L12 18.5l-1.8-5.8-5.7-1.9L10.2 9z"/><path d="M19 3v3M17.5 4.5h3M5 17v3M3.5 18.5h3"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 18.5V20"/><circle cx="10" cy="8" r="3.5"/><path d="M20 20v-1.5a3.5 3.5 0 0 0-2.5-3.35M15.5 4.6a3.5 3.5 0 0 1 0 6.8"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="m8.5 13.5-1.5 7 5-2.5 5 2.5-1.5-7"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20h3.38zM5.25 3.5a1.97 1.97 0 1 0 0 3.94 1.97 1.97 0 0 0 0-3.94zM20.44 13.4c0-3.1-1.66-5.15-4.33-5.15-1.6 0-2.62.86-3.06 1.66V8.5H9.8V20h3.38v-6c0-1.58.3-3.1 2.25-3.1 1.92 0 1.95 1.8 1.95 3.2V20h3.38z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.87.25-1.46 1.5-1.46h1.6V4.45A21 21 0 0 0 14.3 4.3c-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  </defs>
+</svg>
+
+<!-- ================= Header ================= -->
+<header class="site-header" id="top">
+  <div class="container site-header__inner">
+    <a class="brand" href="https://tanotsolutions.com/" aria-label="Tanot Solutions home">
+      <img src="https://tanotsolutions.com/wp-content/uploads/2025/03/TS-blue-logo-1536x370.png" alt="Tanot Solutions" width="148" height="36">
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="https://tanotsolutions.com/case-studies/">Case Studies</a>
+      <a class="nav__link" href="https://tanotsolutions.com/link-building-service-reviews/">Reviews</a>
+      <div class="nav__item" data-dropdown>
+        <button class="nav__trigger" aria-expanded="false" aria-haspopup="true">Services <svg><use href="#i-chev-down"/></svg></button>
+        <div class="nav__menu">
+          <a href="https://tanotsolutions.com/services/link-building/">Link Building</a>
+        </div>
+      </div>
+      <div class="nav__item" data-dropdown>
+        <button class="nav__trigger" aria-expanded="false" aria-haspopup="true">Company <svg><use href="#i-chev-down"/></svg></button>
+        <div class="nav__menu">
+          <a href="https://tanotsolutions.com/about/">About</a>
+          <a href="https://tanotsolutions.com/featured-in/">Featured In</a>
+          <a href="https://tanotsolutions.com/contact/">Contact Us</a>
+        </div>
+      </div>
+      <a class="nav__link" href="https://tanotsolutions.com/blog/">Blog</a>
+    </nav>
+
+    <a class="btn btn--primary btn--sm header-cta" href="https://tanotsolutions.com/lets-talk/">Book a Free Call <svg><use href="#i-arrow"/></svg></a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <svg class="icon-open"><use href="#i-menu"/></svg>
+      <svg class="icon-close"><use href="#i-close"/></svg>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="container mobile-nav__inner">
+      <a href="https://tanotsolutions.com/case-studies/">Case Studies</a>
+      <a href="https://tanotsolutions.com/link-building-service-reviews/">Reviews</a>
+      <details>
+        <summary>Services <svg><use href="#i-chev-down"/></svg></summary>
+        <a href="https://tanotsolutions.com/services/link-building/">Link Building</a>
+      </details>
+      <details>
+        <summary>Company <svg><use href="#i-chev-down"/></svg></summary>
+        <a href="https://tanotsolutions.com/about/">About</a>
+        <a href="https://tanotsolutions.com/featured-in/">Featured In</a>
+        <a href="https://tanotsolutions.com/contact/">Contact Us</a>
+      </details>
+      <a href="https://tanotsolutions.com/blog/">Blog</a>
+      <a class="btn btn--primary btn--block" href="https://tanotsolutions.com/lets-talk/">Book a Free Call <svg><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= Hero + stats ================= -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero__grid">
+      <div>
+        <a class="hero__badge" href="https://clutch.co/profile/tanot-solutions" target="_blank" rel="noopener">
+          <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <span><b>5.0</b> rated on Clutch<span class="hero__badge-extra"> · 11+ years of SEO experience</span></span>
+          <svg class="hero__badge-arrow" aria-hidden="true"><use href="#i-chev-right"/></svg>
+        </a>
+        <h1 id="hero-title"><span class="accent">Best SEO Services</span> for Google, AI Search, and Revenue Growth</h1>
+        <p class="hero__lead">Tanot Solutions helps your business rank higher on Google and get recommended by AI tools like ChatGPT, Perplexity, and Google AI Overviews. From technical SEO and content marketing to high-authority link building and local SEO, we handle everything needed to bring you more qualified leads and measurable revenue growth.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="https://tanotsolutions.com/lets-talk/">Book a Free Strategy Call <svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--secondary" href="https://tanotsolutions.com/case-studies/">See Client Results</a>
+        </div>
+        <ul class="hero__points">
+          <li><svg><use href="#i-check"/></svg>No upfront payment</li>
+          <li><svg><use href="#i-check"/></svg>White-hat links only</li>
+          <li><svg><use href="#i-check"/></svg>100% transparent process</li>
+        </ul>
+      </div>
+
+      <form class="card lead-form form" novalidate aria-labelledby="form-title">
+        <h2 id="form-title">Get Your Free SEO Strategy</h2>
+        <p>Tell us about your goals and we'll show you where your organic growth can improve.</p>
+        <div class="form-grid">
+          <div class="form-row">
+            <div class="field">
+              <label for="f-first">First name<span class="req" aria-hidden="true">*</span></label>
+              <input id="f-first" name="first" type="text" autocomplete="given-name" required>
+              <span class="field-error">Please enter your first name.</span>
+            </div>
+            <div class="field">
+              <label for="f-last">Last name<span class="req" aria-hidden="true">*</span></label>
+              <input id="f-last" name="last" type="text" autocomplete="family-name" required>
+              <span class="field-error">Please enter your last name.</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-email">Work email<span class="req" aria-hidden="true">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
+            <span class="field-error">Please enter a valid email address.</span>
+          </div>
+          <div class="field">
+            <label for="f-url">Website<span class="req" aria-hidden="true">*</span></label>
+            <input id="f-url" name="url" type="text" inputmode="url" placeholder="yourcompany.com" required>
+            <span class="field-error">Please enter your website.</span>
+          </div>
+          <div class="field">
+            <label for="f-msg">How can we help?<span class="req" aria-hidden="true">*</span></label>
+            <textarea id="f-msg" name="message" placeholder="Your goals, target markets, current challenges…" required></textarea>
+            <span class="field-error">Please tell us a little about your goals.</span>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit">Get My Free Strategy <svg><use href="#i-arrow"/></svg></button>
+          <p class="form-success" role="status">Thanks! (Mockup only — this form is not connected.)</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="stats" role="list" aria-label="Key numbers">
+      <div class="stat" role="listitem"><div class="stat__value">150<span>+</span></div><div class="stat__label">Clients served</div></div>
+      <div class="stat" role="listitem"><div class="stat__value">98<span>%</span></div><div class="stat__label">Client satisfaction</div></div>
+      <div class="stat" role="listitem"><div class="stat__value">11<span>+</span></div><div class="stat__label">Years of SEO experience</div></div>
+      <div class="stat" role="listitem"><div class="stat__value">2<span>+</span></div><div class="stat__label">Years average client retention</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Client logos ================= -->
+<section class="section clients" aria-labelledby="clients-title">
+  <div class="container">
+    <h2 class="clients__title" id="clients-title">Trusted by <b>150+ brands</b> across SaaS, healthcare, marketing, B2B and enterprise</h2>
+    <ul class="logo-wall" role="list">
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/download-8-1.png" alt="Client logo"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/LT_logo_Black_Color_2-1.png" alt="LearnTastic"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/3-1-e1791809219624.png" alt="Kommo"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/download-5-1.png" alt="SendPulse"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/download-2-2-e1791809526338.png" alt="EngageBay"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/logo-1-1.png" alt="FreshLearn"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/StationX-blue-logo-1.png" alt="StationX"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/download-6-1.png" alt="LeadSync"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/download-4-1.png" alt="Client logo"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/gravyty_logo_new-1.png" alt="Gravyty"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/beamjobs_logo-1.png" alt="BeamJobs"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/tracefuse-logo-1.png" alt="TraceFuse"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/movinnza-logo-1.png" alt="Movinnza"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/Cpraedcourse-logo-1.png" alt="CPR and ED Course"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/flux-engine-logo-1.png" alt="Flux Engine"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/logo-light-en-1.png" alt="UltaHost"></li>
+    </ul>
+    <p class="logo-more">…and many more.</p>
+  </div>
+</section>
+
+<!-- ================= Testimonials ================= -->
+<section class="section section--alt reviews" aria-labelledby="reviews-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Client reviews</span>
+      <h2 id="reviews-title">Reviews from businesses we've helped grow</h2>
+      <p>Don't take our word for it. Here's what clients say about working with Tanot Solutions.</p>
+    </div>
+
+    <div class="reviews__grid">
+      <figure class="card video-card">
+        <div class="video-frame">
+          <iframe loading="lazy" src="https://player.vimeo.com/video/888963147?title=0&byline=0&portrait=0" title="Video testimonial from Lisa Warren" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <figcaption>
+          <span class="avatar" aria-hidden="true">LW</span>
+          <div><div class="person__name">Lisa Warren</div><div class="person__role">Content Manager, HR Company · Video testimonial, 0:42</div></div>
+        </figcaption>
+      </figure>
+
+      <figure class="card quote-card quote-card--transcript" aria-label="Transcript of Lisa Warren's video testimonial">
+        <div class="quote-card__top">
+          <span class="pill">Video transcript</span>
+          <svg class="quote-card__mark" aria-hidden="true"><use href="#i-quote"/></svg>
+        </div>
+        <blockquote>
+          <p>“I'm the content manager for our website, and we have been working with Tanot Solutions for a couple of months now. They've been able to help us double our traffic, and we've also seen improvement in our page position for our target keywords.</p>
+          <p>One thing I really appreciate about Tanot Solutions is their ability to sleuth out and scope out high-quality links. They're very good at consistently finding us links with domain authorities of 50 or higher, and pages that have really great page traffic.</p>
+          <p>So we're really enjoying our relationship working with Tanot Solutions and look forward to the work they'll do in the future.”</p>
+        </blockquote>
+        <span class="spacer"></span>
+        <footer>
+          <div class="stars" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <span class="quote-card__who">Lisa Warren · Content Manager, HR Company</span>
+        </footer>
+      </figure>
+
+      <figure class="card quote-card quote-card--third">
+        <div class="quote-card__top">
+          <div class="stars" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <svg class="quote-card__mark" aria-hidden="true"><use href="#i-quote"/></svg>
+        </div>
+        <blockquote>“After we started link building with Tanot Solutions, they helped our CRM's high-converting product page rank higher with an impressive 80% increase in traffic and an equally exceptional 80% increase in the total number of sign-ups every day.”</blockquote>
+        <span class="spacer"></span>
+        <footer>
+          <span class="avatar" aria-hidden="true">SD</span>
+          <div><div class="person__name">Sandeep Das</div><div class="person__role">Marketing Manager, CRM SaaS Company</div></div>
+        </footer>
+      </figure>
+
+      <figure class="card quote-card quote-card--third">
+        <div class="quote-card__top">
+          <div class="stars" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <svg class="quote-card__mark" aria-hidden="true"><use href="#i-quote"/></svg>
+        </div>
+        <blockquote>“We've been impressed by their ability to consistently build high-quality backlinks, which are very challenging to achieve. We work with highly reputed brands, where quality guidelines are stringent and difficult for many agencies to meet. However, Tanot Solutions consistently meets these standards.”</blockquote>
+        <span class="spacer"></span>
+        <footer>
+          <span class="avatar" aria-hidden="true">MD</span>
+          <div><div class="person__name">Michael Dunlop</div><div class="person__role">Director of LinkBuilder.io</div></div>
+        </footer>
+      </figure>
+
+      <figure class="card quote-card quote-card--third">
+        <div class="quote-card__top">
+          <div class="stars" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <svg class="quote-card__mark" aria-hidden="true"><use href="#i-quote"/></svg>
+        </div>
+        <blockquote>“Since we started working with Tanot Solutions on our link-building efforts, we've seen steady increases in our organic traffic MoM over the past 6 months. I can also honestly say that Renu and the team are very responsive and punctual, something I really appreciate from our partners.”</blockquote>
+        <span class="spacer"></span>
+        <footer>
+          <span class="avatar" aria-hidden="true">MS</span>
+          <div><div class="person__name">Marko Spasic</div><div class="person__role">Marketing Manager, Hosting company</div></div>
+        </footer>
+      </figure>
+    </div>
+
+    <div class="btn-row btn-row--center reviews__cta">
+      <a class="btn btn--primary" href="https://tanotsolutions.com/link-building-service-reviews/">View All Client Reviews <svg><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--secondary" href="https://clutch.co/profile/tanot-solutions" target="_blank" rel="noopener">See Us on Clutch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Services ================= -->
+<section class="section services" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2 id="services-title">SEO services built around revenue, not vanity metrics</h2>
+      <p>Pick one service or combine them. Every campaign targets authority, high-intent traffic and conversions.</p>
+    </div>
+
+    <div class="split split--4-8">
+      <div class="card svc-nav">
+        <div class="svc-tabs" role="tablist" aria-label="SEO services" aria-orientation="vertical">
+        <button class="svc-tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true"><span class="svc-tab__num">01</span>Link Building<svg><use href="#i-chev-right"/></svg></button>
+        <button class="svc-tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1"><span class="svc-tab__num">02</span>Technical SEO<svg><use href="#i-chev-right"/></svg></button>
+        <button class="svc-tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1"><span class="svc-tab__num">03</span>AI SEO<svg><use href="#i-chev-right"/></svg></button>
+        <button class="svc-tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1"><span class="svc-tab__num">04</span>Local SEO<svg><use href="#i-chev-right"/></svg></button>
+        <button class="svc-tab" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false" tabindex="-1"><span class="svc-tab__num">05</span>SaaS SEO<svg><use href="#i-chev-right"/></svg></button>
+        <button class="svc-tab" role="tab" id="tab-6" aria-controls="panel-6" aria-selected="false" tabindex="-1"><span class="svc-tab__num">06</span>Content Marketing<svg><use href="#i-chev-right"/></svg></button>
+        </div>
+        <div class="svc-nav__help">
+          <p>Not sure which service fits your goals?</p>
+          <a class="link-arrow" href="https://tanotsolutions.com/lets-talk/">Book a free strategy call <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card svc-panels">
+        <div class="svc-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+          <div class="svc-panel__head"><span class="icon-tile"><svg><use href="#i-link"/></svg></span><h3>Link Building</h3></div>
+          <p>We earn high-quality, white-hat backlinks from trusted websites in your industry. These links show Google your business is credible, helping you rank higher and stay there with our <a href="https://tanotsolutions.com/services/link-building/">link building services</a>.</p>
+          <ul class="checklist">
+            <li><svg><use href="#i-check"/></svg>High-authority guest posts</li>
+            <li><svg><use href="#i-check"/></svg>Contextual niche edit links</li>
+            <li><svg><use href="#i-check"/></svg>Industry-relevant websites only</li>
+            <li><svg><use href="#i-check"/></svg>Site approval before placement</li>
+            <li><svg><use href="#i-check"/></svg>White-label agency solutions</li>
+            <li><svg><use href="#i-check"/></svg>Pay for live links</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://tanotsolutions.com/lets-talk/">Get Link Building Plan <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--secondary" href="https://tanotsolutions.com/services/link-building/">Learn More</a>
+          </div>
+        </div>
+
+        <div class="svc-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+          <div class="svc-panel__head"><span class="icon-tile"><svg><use href="#i-gear"/></svg></span><h3>Technical SEO</h3></div>
+          <p>We fix the hidden issues that stop Google and AI from finding, understanding, and ranking your website. A faster, healthier site means better rankings, more AI visibility and a smoother experience that turns visitors into customers.</p>
+          <ul class="checklist">
+            <li><svg><use href="#i-check"/></svg>Complete website SEO audits</li>
+            <li><svg><use href="#i-check"/></svg>Faster page load speed</li>
+            <li><svg><use href="#i-check"/></svg>Core Web Vitals optimization</li>
+            <li><svg><use href="#i-check"/></svg>Crawling and indexing fixes</li>
+            <li><svg><use href="#i-check"/></svg>Schema markup implementation</li>
+            <li><svg><use href="#i-check"/></svg>Mobile and AI-ready setup</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://tanotsolutions.com/lets-talk/">Get Your Free Technical SEO Audit <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--secondary" href="#services" data-todo="Technical SEO page URL">Learn More</a>
+          </div>
+        </div>
+
+        <div class="svc-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+          <div class="svc-panel__head"><span class="icon-tile"><svg><use href="#i-sparkle"/></svg></span><h3>AI SEO</h3></div>
+          <p>Your customers now ask ChatGPT, Perplexity, and Google AI Overviews for recommendations. We optimize your brand so these AI tools mention, cite, and recommend your business when buyers are searching.</p>
+          <ul class="checklist">
+            <li><svg><use href="#i-check"/></svg>Google AI Overviews visibility</li>
+            <li><svg><use href="#i-check"/></svg>ChatGPT and Perplexity mentions</li>
+            <li><svg><use href="#i-check"/></svg>Answer engine optimization (AEO)</li>
+            <li><svg><use href="#i-check"/></svg>AI-friendly content structure</li>
+            <li><svg><use href="#i-check"/></svg>AI-ready structured data</li>
+            <li><svg><use href="#i-check"/></svg>AI visibility performance tracking</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://tanotsolutions.com/lets-talk/">Get Your Free AI SEO Audit <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--secondary" href="#services" data-todo="AI SEO page URL">Learn More</a>
+          </div>
+        </div>
+
+        <div class="svc-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+          <div class="svc-panel__head"><span class="icon-tile"><svg><use href="#i-pin"/></svg></span><h3>Local SEO</h3></div>
+          <p>We help nearby customers find you on Google Search and Maps the moment they need your services. More local visibility means more calls, direction requests, and visits from ready-to-buy customers.</p>
+          <ul class="checklist">
+            <li><svg><use href="#i-check"/></svg>Google Business Profile optimization</li>
+            <li><svg><use href="#i-check"/></svg>Higher Google Maps rankings</li>
+            <li><svg><use href="#i-check"/></svg>Local keyword targeting</li>
+            <li><svg><use href="#i-check"/></svg>Consistent directory listings</li>
+            <li><svg><use href="#i-check"/></svg>Local community backlinks</li>
+            <li><svg><use href="#i-check"/></svg>Review and reputation management</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://tanotsolutions.com/lets-talk/">Get Your Free Local SEO Audit <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--secondary" href="#services" data-todo="Local SEO page URL">Learn More</a>
+          </div>
+        </div>
+
+        <div class="svc-panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" hidden>
+          <div class="svc-panel__head"><span class="icon-tile"><svg><use href="#i-layers"/></svg></span><h3>SaaS SEO</h3></div>
+          <p>SaaS growth needs a different SEO playbook. We help software companies rank for the searches buyers make right before choosing a tool, driving more trials, demos, and recurring revenue.</p>
+          <ul class="checklist">
+            <li><svg><use href="#i-check"/></svg>More demo requests</li>
+            <li><svg><use href="#i-check"/></svg>Steady monthly sign-up growth</li>
+            <li><svg><use href="#i-check"/></svg>Revenue-focused SEO strategy</li>
+            <li><svg><use href="#i-check"/></svg>AI search visibility</li>
+            <li><svg><use href="#i-check"/></svg>Topical authority building</li>
+            <li><svg><use href="#i-check"/></svg>Links from top SaaS websites</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://tanotsolutions.com/lets-talk/">Get Your Free SaaS SEO Audit <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--secondary" href="#services" data-todo="SaaS SEO page URL">Learn More</a>
+          </div>
+        </div>
+
+        <div class="svc-panel" role="tabpanel" id="panel-6" aria-labelledby="tab-6" hidden>
+          <div class="svc-panel__head"><span class="icon-tile"><svg><use href="#i-pen"/></svg></span><h3>Content Marketing Services</h3></div>
+          <p>We create content that answers your customers' questions, ranks on Google, and guides readers toward becoming buyers. Every piece is planned around what your audience is actually searching for.</p>
+          <ul class="checklist">
+            <li><svg><use href="#i-check"/></svg>Keyword and intent research</li>
+            <li><svg><use href="#i-check"/></svg>AI-citation-ready content</li>
+            <li><svg><use href="#i-check"/></svg>Content gap analysis</li>
+            <li><svg><use href="#i-check"/></svg>E-E-A-T content strategy</li>
+            <li><svg><use href="#i-check"/></svg>Conversion-focused SEO copywriting</li>
+            <li><svg><use href="#i-check"/></svg>Content refresh and updates</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://tanotsolutions.com/lets-talk/">Get Your Free Content Audit <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--secondary" href="#services" data-todo="Content marketing page URL">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Case study ================= -->
+<section class="section section--alt case" aria-labelledby="case-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Case study</span>
+      <h2 id="case-title">Real results from real campaigns</h2>
+    </div>
+    <article class="card case-card">
+      <figure class="case-card__media">
+        <a href="https://tanotsolutions.com/wp-content/uploads/2026/10/unnamed.png" target="_blank" rel="noopener" aria-label="Open the full-size dashboard screenshot">
+          <img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/unnamed.png" alt="SEO dashboard showing organic traffic growth for the HR company" width="512" height="295">
+          <span class="case-card__zoom"><svg><use href="#i-plus"/></svg>View full size</span>
+        </a>
+      </figure>
+      <div class="case-card__body">
+        <span class="pill">HR company · Link building + technical SEO</span>
+        <h3 style="margin-top:16px">How an HR company grew from zero to 6,200 monthly visitors in 8 months</h3>
+        <p>Starting from a domain with almost no authority, we built a steady flow of niche-relevant editorial links with the required technical SEO and content changes, and traffic climbed from zero to 6,200 visitors in 8 months.</p>
+        <div class="metrics">
+          <div class="metric"><div class="metric__value">0 → 6.2K</div><div class="metric__label">Monthly visitors</div></div>
+          <div class="metric"><div class="metric__value">0 → 1.3K</div><div class="metric__label">AI citations</div></div>
+          <div class="metric"><div class="metric__value">0 → 1.6K</div><div class="metric__label">Ranking keywords</div></div>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="https://tanotsolutions.com/case-studies/" data-todo="Direct case study URL">Read Full Case Study <svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--secondary" href="https://tanotsolutions.com/case-studies/">All Case Studies</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= Why choose us ================= -->
+<section class="section why" aria-labelledby="why-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Tanot Solutions</span>
+      <h2 id="why-title">A growth partner, not another SEO agency</h2>
+      <p>Clients describe working with us as “less like a vendor, more like a partner.” Here's why they stay for 2+ years on average.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card feature"><span class="icon-tile"><svg><use href="#i-target"/></svg></span><div><h3>Results, not vanity metrics</h3><p>Every campaign is tied to rankings, AI visibility, leads, sales and revenue.</p></div></div>
+      <div class="card feature"><span class="icon-tile"><svg><use href="#i-wallet"/></svg></span><div><h3>Performance-based pricing</h3><p>No upfront payment. Pay only for verified deliverables.</p></div></div>
+      <div class="card feature"><span class="icon-tile"><svg><use href="#i-shield"/></svg></span><div><h3>Enterprise-grade quality</h3><p>Links and strategy that meet global brand standards, at scale.</p></div></div>
+      <div class="card feature"><span class="icon-tile"><svg><use href="#i-eye"/></svg></span><div><h3>100% transparent process</h3><p>You approve everything, including content, links and technical changes, before we go ahead.</p></div></div>
+      <div class="card feature"><span class="icon-tile"><svg><use href="#i-sparkle"/></svg></span><div><h3>AI-first SEO</h3><p>Visible in AI Overviews, ChatGPT and Perplexity, not just Google.</p></div></div>
+      <div class="card feature"><span class="icon-tile"><svg><use href="#i-users"/></svg></span><div><h3>An extension of your team</h3><p>Dedicated specialists, clear communication, genuine relationship.</p></div></div>
+    </div>
+    <div class="btn-row btn-row--center why__cta">
+      <a class="btn btn--primary" href="https://tanotsolutions.com/lets-talk/">Talk to Our Team <svg><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Awards ================= -->
+<section class="section section--alt awards" aria-labelledby="awards-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Recognition</span>
+      <h2 id="awards-title">The industry's top-rated SEO agency</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card award"><div class="award__img"><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/06/Web_Photo_Editor-4x.jpg-768x511.jpeg" alt="Renu Sharma receiving the Rajasthan Women Leaders Award"></div><div class="award__body"><svg><use href="#i-award"/></svg><h3>Rajasthan Women Leaders Award</h3></div></div>
+      <div class="card award"><div class="award__img"><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/06/IMG_20260601_175356.jpg-e1780322963498-768x549.jpeg" alt="Most Trusted Global SEO Solutions Provider certificate"></div><div class="award__body"><svg><use href="#i-award"/></svg><h3>Most Trusted Global SEO Solutions Provider</h3></div></div>
+      <div class="card award"><div class="award__img"><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/06/image-11-2.png" alt="Best ROI Focused SEO Agency 2026 certificate"></div><div class="award__body"><svg><use href="#i-award"/></svg><h3>Best ROI Focused SEO Agency 2026</h3></div></div>
+      <div class="card award"><div class="award__img"><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-4-2026-05_20_40-PM-683x1024.png" alt="Sardar Patel Unity Awards 2026 trophy"></div><div class="award__body"><svg><use href="#i-award"/></svg><h3>Sardar Patel Unity Awards 2026</h3></div></div>
+      <div class="card award"><div class="award__img"><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-03-at-6.59.51-PM-768x260.jpeg" alt="Clutch award badges"></div><div class="award__body"><svg><use href="#i-award"/></svg><h3>Clutch Awards</h3></div></div>
+      <div class="card award"><div class="award__img"><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/03/1769148205521.png" alt="Best ROI Focused SEO Agency 2026 trophy"></div><div class="award__body"><svg><use href="#i-award"/></svg><h3>Best ROI Focused SEO Agency 2026</h3></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Founder ================= -->
+<section class="section founder" aria-labelledby="founder-title">
+  <div class="container founder__grid">
+    <figure class="founder__media">
+      <img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2025/05/Renu-Sharma-768x950.webp" alt="Renu Sharma, Founder of Tanot Solutions" width="768" height="950">
+      <figcaption class="founder__stats">
+        <div><strong>11+</strong><span>Years in SEO</span></div>
+        <div><strong>2020</strong><span>Founded</span></div>
+        <div><strong>150+</strong><span>Clients</span></div>
+      </figcaption>
+    </figure>
+    <div class="founder__body">
+      <span class="eyebrow">Meet the founder</span>
+      <h2 id="founder-title">Hi, I'm Renu. I built Tanot Solutions to make SEO accountable.</h2>
+      <div class="prose">
+        <p>For over 11 years, I've helped brands grow through search, from early-stage startups to global enterprises. Along the way, I saw how easily businesses lose trust in SEO: vague reports, guaranteed #1 rankings that never happen, cheap spammy links that lead to penalties, and agencies that disappear once the contract is signed.</p>
+        <p class="founder__mission">I founded Tanot Solutions in 2020 to change that, with honest strategy, ethical practices, and complete transparency at every step.</p>
+      </div>
+      <div class="founder__sign">
+        <div class="founder__who">
+          <span class="person__name">Renu Sharma</span>
+          <span class="person__role">Founder &amp; Head of SEO Strategy</span>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="https://tanotsolutions.com/lets-talk/">Book a Call with Renu <svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--secondary btn--icon" href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="Renu Sharma on LinkedIn" data-todo="Renu's LinkedIn URL"><svg><use href="#i-linkedin"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Team ================= -->
+<section class="section section--alt team" aria-labelledby="team-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our team</span>
+      <h2 id="team-title">The team behind your results</h2>
+    </div>
+    <div class="grid grid-4">
+      <div class="card member"><span class="member__avatar" aria-hidden="true">VS</span><div><h3>Vikas Sharma</h3><p>Co-Founder &amp; Head of Operations</p></div></div>
+      <div class="card member"><span class="member__avatar" aria-hidden="true">P</span><div><h3>Pradeep</h3><p>Content Manager</p></div></div>
+      <div class="card member"><span class="member__avatar" aria-hidden="true">RJ</span><div><h3>Ravina Jangid</h3><p>Link Building Expert</p></div></div>
+      <div class="card member"><span class="member__avatar" aria-hidden="true">AM</span><div><h3>Aniket Mukherjee</h3><p>Link Building Expert</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Featured in ================= -->
+<section class="featured" aria-labelledby="featured-title">
+  <div class="container featured__inner">
+    <h2 class="featured__label" id="featured-title">As featured on<span>…and many more.</span></h2>
+    <ul class="logo-wall" role="list">
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/images-e1791812810411.png" alt="Entrepreneur"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/HubSpot_Logo.svg-300x88.webp" alt="HubSpot"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/forbes-thumb-1.png" alt="Forbes"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/download-1.png" alt="GoDaddy"></li>
+      <li><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9oZWFkZXJfYnJhbmRpbmc6YnJhbmRfbG9nbzAyMmQyZDQwLWU5ZjEtMTFlZi1iOTBiLTNiODE5MDc0OTVhZg-300x91.webp" alt="The Tribune"></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section faq faq--dark" aria-labelledby="faq-title">
+  <div class="container faq__layout">
+    <div class="faq__head">
+      <span class="eyebrow eyebrow--dark">FAQ</span>
+      <h2 id="faq-title">Questions to ask before hiring an SEO agency</h2>
+      <p>Can't find your answer? We're happy to walk you through it on a quick call.</p>
+    </div>
+
+    <div class="accordion faq__list" data-accordion>
+      <div class="acc-item is-open">
+        <h3><button class="acc-btn" aria-expanded="true" aria-controls="faq-1" id="faq-1-btn"><span class="acc-num">01</span><span class="acc-q">How will working with Tanot Solutions help grow my business?</span><span class="acc-icon"><svg><use href="#i-plus"/></svg></span></button></h3>
+        <div class="acc-panel" id="faq-1" role="region" aria-labelledby="faq-1-btn"><div><p>We focus on what actually moves your business forward: qualified traffic, leads, and revenue, not just rankings. From technical SEO and content strategy to high-authority link building, every campaign is built around your goals and designed to attract real buyers. You'll always know what we're doing, why we're doing it, and how it's contributing to your growth.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn"><span class="acc-num">02</span><span class="acc-q">Are your link building services safe and Google-friendly?</span><span class="acc-icon"><svg><use href="#i-plus"/></svg></span></button></h3>
+        <div class="acc-panel" id="faq-2" role="region" aria-labelledby="faq-2-btn"><div><p>Yes. We never use private blog networks, bulk link packages, or spammy directories. Every link is earned through genuine outreach on relevant, high-quality websites with real audiences and traffic. Our approach follows Google's guidelines, so you build lasting authority without risking penalties.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn"><span class="acc-num">03</span><span class="acc-q">How long does SEO take to show results?</span><span class="acc-icon"><svg><use href="#i-plus"/></svg></span></button></h3>
+        <div class="acc-panel" id="faq-3" role="region" aria-labelledby="faq-3-btn"><div><p>Most businesses start seeing early improvements within 3 to 6 months, with stronger, compounding growth over 6 to 12 months. Timelines depend on your industry, competition, website health, and starting point. We'll never promise overnight rankings. Instead, we'll give you a realistic roadmap and keep you updated on progress every step of the way.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn"><span class="acc-num">04</span><span class="acc-q">Do you offer complete SEO services or only link building?</span><span class="acc-icon"><svg><use href="#i-plus"/></svg></span></button></h3>
+        <div class="acc-panel" id="faq-4" role="region" aria-labelledby="faq-4-btn"><div><p>We offer end-to-end SEO. That includes technical audits, on-page optimization, keyword research, content strategy, local SEO, and link building. You can work with us for a full SEO strategy or choose specific services based on what your business needs.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn"><span class="acc-num">05</span><span class="acc-q">Will I have visibility into the work being done?</span><span class="acc-icon"><svg><use href="#i-plus"/></svg></span></button></h3>
+        <div class="acc-panel" id="faq-5" role="region" aria-labelledby="faq-5-btn"><div><p>Absolutely. Transparency is at the core of how we work. You'll receive clear, easy-to-understand reports showing the work completed, links built, rankings, traffic, and progress toward your goals. You'll also have a dedicated point of contact, so you're never left wondering what's happening with your campaign.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="faq-6" id="faq-6-btn"><span class="acc-num">06</span><span class="acc-q">Do you work with agencies on a white-label basis?</span><span class="acc-icon"><svg><use href="#i-plus"/></svg></span></button></h3>
+        <div class="acc-panel" id="faq-6" role="region" aria-labelledby="faq-6-btn"><div><p>Yes. We partner with agencies worldwide to deliver white-label SEO and link building under their brand. Our team works quietly in the background while you maintain the client relationship, with unbranded reports, flexible packages, and complete confidentiality.</p></div></div>
+      </div>
+    </div>
+
+    <aside class="faq__card" aria-label="Talk to the founder">
+      <div class="faq__card-person">
+        <img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2025/05/Renu-Sharma-243x300.webp" alt="Renu Sharma" width="56" height="56">
+        <div>
+          <span class="faq__card-name">Still deciding?</span>
+          <span class="faq__card-role">Talk to Renu Sharma, Founder &amp; Head of SEO Strategy</span>
+        </div>
+      </div>
+      <p>Get a free, no-obligation audit showing your website's current position and a step-by-step roadmap to 2X your traffic and leads.</p>
+      <a class="btn btn--primary btn--block" href="https://tanotsolutions.com/lets-talk/">Claim Your Free SEO Growth Plan <svg><use href="#i-arrow"/></svg></a>
+      <a class="faq__card-mail" href="mailto:info@tanotsolutions.com"><svg><use href="#i-mail"/></svg>or email info@tanotsolutions.com</a>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= Blog ================= -->
+<section class="section blog" aria-labelledby="blog-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Insights</span>
+      <h2 id="blog-title">Latest SEO &amp; link building insights</h2>
+    </div>
+    <div class="grid grid-3">
+      <a class="card post" href="https://tanotsolutions.com/blog/link-building-for-startups/">
+        <div class="post__img"><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/Link-Building-for-Startups-How-to-Get-Quality-Backlinks-on-a-Budget-768x768.jpg" alt="Link building for startups"></div>
+        <div class="post__body">
+          <span class="pill">Link Building</span>
+          <h3>Link Building for Startups: How to Get Quality Backlinks on a Budget</h3>
+          <div class="post__meta"><span>Renu Sharma</span><span class="dot"></span><time datetime="2026-10-06">Oct 6, 2026</time></div>
+        </div>
+      </a>
+      <a class="card post" href="https://tanotsolutions.com/blog/white-hat-seo-techniques/">
+        <div class="post__img"><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/10/13-White-Hat-SEO-Techniques-How-to-Rank-Higher-on-Google-AI-Search-768x492.jpg" alt="White hat SEO techniques"></div>
+        <div class="post__body">
+          <span class="pill">SEO</span>
+          <h3>13 White Hat SEO Techniques: How to Rank Higher on Google &amp; AI Search</h3>
+          <div class="post__meta"><span>Renu Sharma</span><span class="dot"></span><time datetime="2026-10-02">Oct 2, 2026</time></div>
+        </div>
+      </a>
+      <a class="card post" href="https://tanotsolutions.com/blog/ahrefs-vs-majestic/">
+        <div class="post__img"><img loading="lazy" src="https://tanotsolutions.com/wp-content/uploads/2026/09/Ahrefs-vs.-Majestic-My-Honest-Review-After-10-Years-of-Using-768x512.jpg" alt="Ahrefs vs Majestic comparison"></div>
+        <div class="post__body">
+          <span class="pill">Link Building</span>
+          <h3>Ahrefs vs. Majestic: My Honest Review After 10 Years of Using</h3>
+          <div class="post__meta"><span>Renu Sharma</span><span class="dot"></span><time datetime="2026-09-28">Sep 28, 2026</time></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Final CTA ================= -->
+<section class="cta" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta__band">
+      <div class="cta__copy">
+        <span class="cta__tag">30-day trial</span>
+        <h2 id="cta-title">Try our SEO and link building service for 30 days, then choose to stay</h2>
+        <p>No upfront payment. Pay only for verified deliverables, and approve every link before it goes live.</p>
+        <div class="btn-row">
+          <a class="btn btn--on-dark" href="https://tanotsolutions.com/lets-talk/">Book a Call <svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost-dark" href="https://tanotsolutions.com/contact/">Contact Us</a>
+        </div>
+      </div>
+      <div class="cta__card">
+        <h3>Your free SEO growth plan</h3>
+        <ul class="cta__list">
+          <li><span class="cta__num">1</span><div><b>Where you stand today</b><span>An audit of your website's current position.</span></div></li>
+          <li><span class="cta__num">2</span><div><b>A step-by-step roadmap</b><span>The exact fixes, content and links to prioritise.</span></div></li>
+          <li><span class="cta__num">3</span><div><b>A clear growth target</b><span>Built to 2X your traffic and leads.</span></div></li>
+        </ul>
+        <p class="cta__note"><svg><use href="#i-shield"/></svg>White-hat, Google-friendly links · 100% transparent</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= Footer ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img class="footer__logo" src="https://tanotsolutions.com/wp-content/uploads/2025/03/TS-blue-logo-1536x370.png" alt="Tanot Solutions" width="156" height="38">
+        <p>We are an SEO and link-building agency that helps global brands 5X their ROI through strategic SEO and high-quality backlink strategies.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/tanot-solutions" aria-label="LinkedIn" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg></a>
+          <a href="https://www.facebook.com/tanotsolutions" aria-label="Facebook" target="_blank" rel="noopener"><svg><use href="#i-facebook"/></svg></a>
+          <a href="https://www.instagram.com/thetanotsolutions/" aria-label="Instagram" target="_blank" rel="noopener"><svg><use href="#i-instagram"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://tanotsolutions.com/">Home</a></li>
+          <li><a href="https://tanotsolutions.com/about/">About Us</a></li>
+          <li><a href="https://tanotsolutions.com/case-studies/">Case Studies</a></li>
+          <li><a href="https://tanotsolutions.com/link-building-service-reviews/">Client Reviews</a></li>
+          <li><a href="https://tanotsolutions.com/blog/">Blog</a></li>
+          <li><a href="https://tanotsolutions.com/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="https://tanotsolutions.com/services/link-building/">Link Building</a></li>
+          <li><a href="#services" data-todo="Technical SEO page URL">Technical SEO</a></li>
+          <li><a href="#services" data-todo="AI SEO page URL">AI SEO</a></li>
+          <li><a href="#services" data-todo="Local SEO page URL">Local SEO</a></li>
+          <li><a href="#services" data-todo="SaaS SEO page URL">SaaS SEO</a></li>
+          <li><a href="#services" data-todo="Content marketing page URL">Content Marketing</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://tanotsolutions.com/blog/choose-link-building-agency/">Choose an Agency</a></li>
+          <li><a href="https://tanotsolutions.com/blog/link-building-software/">Link Building Tools</a></li>
+          <li><a href="https://tanotsolutions.com/blog/contextual-link-building/">Contextual Links</a></li>
+          <li><a href="https://tanotsolutions.com/blog/how-to-get-free-backlinks/">Free Backlinks Guide</a></li>
+          <li><a href="https://tanotsolutions.com/blog/buy-high-quality-backlinks/">Buy Quality Backlinks</a></li>
+          <li><a href="https://tanotsolutions.com/blog/saas-link-building/">SaaS Link Building</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>Contact</h3>
+        <ul class="footer__contact">
+          <li><svg><use href="#i-mail"/></svg><a href="mailto:info@tanotsolutions.com">info@tanotsolutions.com</a></li>
+          <li><svg><use href="#i-pin"/></svg><span>Jodhpur, Rajasthan, India</span></li>
+          <li><svg><use href="#i-calendar"/></svg><a href="https://tanotsolutions.com/lets-talk/">Book a free call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Tanot Solutions. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="https://tanotsolutions.com/privacy-policy/">Privacy Policy</a>
+        <a href="https://tanotsolutions.com/terms-of-service/">Terms of Service</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
